@@ -1,0 +1,12 @@
+{
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "files.associations": {
+        "Test-vector.C": "cpp",
+        "vector": "cpp",
+        "OFtutorial0.C": "cpp",
+        "argList.C": "cpp",
+        "fileOperationNew.C": "cpp",
+        "OFtutorial1.C": "cpp",
+        "OFtutorial2.C": "cpp"
+    }
+}

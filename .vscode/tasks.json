@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "wmake-build",
+            "command": "",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {
+                    "executable": "/usr/bin/bash",
+                    "args": ["-i", "-c", "of2506_deb && ./Allwclean && ./Allwmake"]
+                }
+            }
+        }
+    ]
+}
