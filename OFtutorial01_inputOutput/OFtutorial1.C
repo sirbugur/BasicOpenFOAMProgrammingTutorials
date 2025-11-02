@@ -40,21 +40,23 @@ int main(int argc, char *argv[])
     const word dictName("customProperties");
 
     // Create and input-output object - this holds the path to the dict and its name
-    IOobject dictIO
-    (
-        dictName, // name of the file
-        mesh.time().constant(), // path to where the file is
-        mesh, // reference to the mesh needed by the constructor
-        IOobject::MUST_READ // indicate that reading this dictionary is compulsory
+    customDict = IOdictionary(
+        IOobject
+        (
+            dictName, // name of the file
+            mesh.time().constant(), // path to where the file is
+            mesh, // reference to the mesh needed by the constructor
+            IOobject::MUST_READ // indicate that reading this dictionary is compulsory
+        )
     );
 
     // Check the if the dictionary is present and follows the OF format
-    if (!dictIO.typeHeaderOk<dictionary>(true))
-        FatalErrorIn(args.executable()) << "Cannot open specified refinement dictionary "
-            << dictName << exit(FatalError);
+    // if (!dictIO.typeHeaderOk<dictionary>(true))
+    //     FatalErrorIn(args.executable()) << "Cannot open specified refinement dictionary "
+    //         << dictName << exit(FatalError);
 
     // Initialise the dictionary object
-    customDict = IOdictionary(dictIO);
+    // customDict = IOdictionary(dictIO);
 
     // ---
     // Read various pieces of information from the main part of the dictionary
@@ -62,7 +64,7 @@ int main(int argc, char *argv[])
     // Lookup which does not need to be told what type of variable we're looking for and
     // uses the standard C++ stringstream syntax
     word someWord;
-    customDict.lookup("someWord") >> someWord;
+    customDict.lookup("someWord") >> someWord; // uses dictionary.H
 
     // This template method needs to know the type of the variable and can provide
     // a default value if the entry is not found in the dictionary
@@ -108,7 +110,10 @@ int main(int argc, char *argv[])
 
     // Append to the imported hash table and wirte it too
     someHashTable.insert("newKey", vector(1., 0., 0.));
+    someHashTable.insert("newKey", vector(2., 0., 0.)); // will not be inserted, duplicate key
     outputFilePtr() << someHashTable << endl;
+
+    Info << "someHashTable(\"newKey\") :" << someHashTable("newKey") << endl; // get value by key
 
     Info<< "End\n" << endl;
     return 0;

@@ -4,9 +4,6 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/lib/openfoam/openfoam*/src/**",
-                "/opt/openfoam*/src/**",
-                "/home/*/OpenFOAM/OpenFOAM-*/src/**",
                 "/home/*/openfoam*/src/**"
             ],
             "defines": [],

@@ -7,6 +7,24 @@
         "argList.C": "cpp",
         "fileOperationNew.C": "cpp",
         "OFtutorial1.C": "cpp",
-        "OFtutorial2.C": "cpp"
+        "OFtutorial2.C": "cpp",
+        "polyMeshIO.C": "cpp",
+        "bitset": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "future": "cpp",
+        "optional": "cpp",
+        "TimeFunction1.C": "cpp",
+        "TimeState.C": "cpp",
+        "OFtutorial3.C": "cpp",
+        "IOdictionary.C": "cpp",
+        "faBoundaryMeshEntries.C": "cpp",
+        "schemesLookupDetail.C": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "HashSet.C": "cpp"
     }
 }

@@ -13,7 +13,7 @@
                 "cwd": "${fileDirname}",
                 "shell": {
                     "executable": "/usr/bin/bash",
-                    "args": ["-i", "-c", "of2506_deb && ./Allwclean && ./Allwmake"]
+                    "args": ["-i", "-c", "of2506_deb && ./Allwclean && ./Allwmake && cd testCase && ./Allrun"]
                 }
             }
         }
